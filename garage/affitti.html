@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <title>Dashboard</title>
+    
+</head>
+<body>
+  <div class="loader"></div>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Garage v. 1.0</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="affitti.html">Affitti <i class="fa fa-car" aria-hidden="true"></i></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="clienti.html">Clienti <i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cassa.html">Cassa <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="garage.html">Garage <i class="fa fa-id-card" aria-hidden="true"></i> </a>
+              </li>
+             <li class="nav-item">
+                <a id="exit"type="button" class="btn btn-danger" onclick="logOut()">Exit <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+             </li> 
+          </ul>
+
+        </div>
+      </nav>
+      <div class="container-fluid">
+
+        <div class="row text-center ">
+          <div class=" col-2">
+          </div>
+          <div class="col-8 ">
+            <div class="shadow-lg p-3 my-5 bg-white rounded">
+              <p class="h2">Choose a car</p>
+              
+                <div class="form-group my-5">
+                  <label for="searchCar">Car</label>
+                    <input type="search" id="searchCar" class="form-control " placeholder="car" onkeyup="search()">
+                  
+                </div>
+                <div class="form-group my-5">
+                  <label for="searchCarType">Car Model</label>
+                    <select  id="carModel" class="form-control" onchange="set()"> </select>
+
+                  
+                </div>
+            
+
+
+            </div>
+          </div>
+          <div class="col-2">
+
+          </div>
+          </div>
+          <div class="row">
+            <div class=" col-8 offset-2 "> <!--Tabella-->
+
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Car</th>
+                    <th scope="col">type</th>
+                    <th scope="col">date</th>
+                    <th scope="col">Affitta</th>
+                    <th scope="col" class="float-right mr-5 text-center">Spesa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td id='tdName'>ES: Merdedes</td>
+                    <td id="tdType">cayman</td>
+                    <td><input id="data" value='1' type="number" class="form-control-sm"></td>
+                    <td ><button class="btn btn-dark btn-success" onclick="calcola()">Affitta</button></td>
+                    <td><input id='spesa' type="text" class="float-right" ></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 offset-3">
+              <p class='h2 text-center'>Cliente</p>
+              <div class="form-group text-center">
+               
+                  <label>Scegli Cliente
+                  <select id="clientSelect" class="form-control form-inline" onchange="scegliCliente()">
+                    <option value="" disabled>Pick the items</option></select>
+                </label>
+                
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+     
+
+</body>
+
+<script src="js/auth.js"></script>
+<script src="./js/affitti.js" defer></script>
+
+</html>
